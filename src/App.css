@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+@import "tailwindcss";
+
+/* Primary: Brain Freeze */
+@theme {
+  --color-primary-100: #f2fbff;
+  --color-primary-200: #b6edff;
+  --color-primary-300: #79e6ff;
+  --color-primary-400: #3de7ff;
+  --color-primary-500: #00eeff;
+  --color-primary-600: #00c7c9;
+  --color-primary-700: #00938b;
+  --color-primary-800: #005c52;
+  --color-primary-900: #002620;
+
+  /* Accent: Chaste Blossoms */
+  --color-accent-100: #fcf2ff;
+  --color-accent-200: #f0c7ff;
+  --color-accent-300: #dd9bfb;
+  --color-accent-400: #c16df3;
+  --color-accent-500: #9c40e3;
+  --color-accent-600: #6a1eb4;
+  --color-accent-700: #430e85;
+  --color-accent-800: #260755;
+  --color-accent-900: #0f0326;
+
+  /* Neutral */
+  --color-neutral-100: #fafcfc;
+  --color-neutral-200: #e8ebed;
+  --color-neutral-300: #d7dbdd;
+  --color-neutral-400: #c6cbcd;
+  --color-neutral-500: #b5bcbd;
+  --color-neutral-600: #8f9697;
+  --color-neutral-700: #6a7171;
+  --color-neutral-800: #454c4c;
+  --color-neutral-900: #222626;
+
+  --font-inter: "Inter", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-linear-to-br from-primary-900 to-accent-900 text-neutral-100/70 min-h-screen font-inter;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-space-grotesk;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  /* glow effects */
+  .soft-glow-white-text {
+    text-shadow:
+      0 0 5px rgba(255, 255, 255, 0.6),
+      0 0 12px rgba(255, 255, 255, 0.35),
+      0 0 22px rgba(255, 255, 255, 0.18);
+  }
+  .soft-glow-green-text {
+    text-shadow:
+      0 0 3px rgba(74, 222, 128, 1),
+      0 0 8px rgba(74, 222, 128, 0.9),
+      0 0 16px rgba(34, 197, 94, 0.8),
+      0 0 32px rgba(34, 197, 94, 0.6),
+      0 0 64px rgba(34, 197, 94, 0.4),
+      0 0 100px rgba(34, 197, 94, 0.25);
+  }
+
+  .soft-glow-blue {
+    box-shadow:
+      0 0 20px rgba(121, 230, 255, 0.6),
+      0 0 40px rgba(121, 230, 255, 0.4);
+  }
+  .soft-glow-green {
+    box-shadow:
+      0 0 10px rgba(34, 197, 94, 0.6),
+      0 0 20px rgba(34, 197, 94, 0.4),
+      0 0 40px rgba(34, 197, 94, 0.2);
+  }
+
+  .card {
+    @apply bg-accent-100/5 rounded-2xl border-2 border-primary-200/10;
+  }
+
+  /* buttons */
+
+  .btn-primary {
+    @apply bg-linear-to-r from-primary-400  to-accent-400 px-8 py-4 rounded-2xl text-primary-900 font-bold uppercase font-space-grotesk hover:scale-105 active:scale-95 transition-all duration-300;
+    box-shadow:
+      0 0 20px rgba(121, 230, 255, 0.6),
+      0 0 40px rgba(121, 230, 255, 0.4);
+  }
+  .btn-destructive {
+    @apply bg-red-400 uppercase font-space-grotesk font-bold text-red-900 px-8 py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300;
+  }
+
+  /* typography */
+  .heading {
+    @apply text-4xl font-bold font-space-grotesk leading-[1.2] text-neutral-100;
+  }
+  .title-lg {
+    @apply text-3xl font-bold font-space-grotesk leading-[1.2] text-neutral-100;
+  }
+  .title-md {
+    @apply text-2xl font-semibold font-space-grotesk leading-[1.2] text-neutral-100;
+  }
+  .title-sm {
+    @apply text-xl font-semibold font-space-grotesk leading-[1.2] text-neutral-100;
+  }
+}
