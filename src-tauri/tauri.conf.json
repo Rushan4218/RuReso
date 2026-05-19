@@ -38,8 +38,8 @@
       }
     },
     "linux": {
-      "appImage": {
-        "buildMediaFramework": true
+      "appimage": {
+        "bundleMediaFramework": true
       }
     }
   }

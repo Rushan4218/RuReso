@@ -2934,7 +2934,7 @@ dependencies = [
 
 [[package]]
 name = "rureso"
-version = "0.1.0"
+version = "0.1.0-beta.2"
 dependencies = [
  "serde",
  "serde_json",
